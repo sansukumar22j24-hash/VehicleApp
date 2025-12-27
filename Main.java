@@ -4,15 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //1. created the objects for respective class and give
+        //   the reference variables and methods inside it
+        //for Bike-vehicleNo,bikeRent=100 and their methods and extra methods.
+        //2. create the customer and customer2 objects.
+
         Customer customer = new Customer();
         Customer customer2= new Customer();
+
+
+        //3. create the Bike and Car objects.
         Bike bike = new Bike();
         Car car = new Car();
-
+        //4. setting the customer vehicle-no,type,days
         customer.setVehicleNo(1);
         customer.setVehicleType("BIKE");
         customer.setRentDays(3);
-
+        //here created  if else for checking the conditions based on the given vehicle type it goes inside
+        // if it vehicle type matches then it goes inside and get vehiclenumber, rentdays, and passing rentdays  the bike function from  customer.
+        // printing the outputs excluding the helmetIncluded()
         {
             if (customer.getVehicleType() == "BIKE") {
                 System.out.println("=============CUSTOMER 1: BIKE ===================");
@@ -25,6 +35,7 @@ public class Main {
                 System.out.println(bk);
                 bike.helmetIncluded();
             }
+            // else it runs with the cancel() method
             else {
                 System.out.println("=============CUSTOMER 1: BIKE ===================");
                 bike.setVehicleNo(customer.getVehicleNo());
@@ -55,6 +66,9 @@ public class Main {
                 int cr = car.book(customer2.getRentDays());
                 System.out.print("Rent:");
                 System.out.println(cr);
+                int crs = car.book(5,48);
+                System.out.print("Rent:");
+                System.out.println(crs);
                 car.driverIncluded();
             }
             else {

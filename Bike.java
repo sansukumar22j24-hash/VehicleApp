@@ -9,9 +9,15 @@ public class Bike extends BaseFunctionality implements BikeInterface {
     public void setBikeRent(int rent) {
         this.bikeRent = rent;
     }
+
     public int  book(int days){
-        this.bikeRent=this.bikeRent*days;
-       return this.bikeRent;
+        int store = this.getBikeRent()* days;
+       return store;
+    }
+    public  int book(int days,int hours){
+        int stores=getBikeRent()/24;
+        int store = this.getBikeRent()* (days+stores);
+        return store;
     }
     public void cancel(){
         System.out.println("Bike can be return");

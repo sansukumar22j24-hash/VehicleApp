@@ -4,16 +4,25 @@ public class Car extends BaseFunctionality implements CarInterface{
 
     private int carRent=500;
 
-    public int getRent() {
+
+    public int getCarRent() {
         return carRent;
     }
 
-    public void setRent(int rent) {
+    public void setCarRent(int rent) {
         this.carRent = rent;
     }
     public  int book(int days){
-        this.carRent=this.carRent*days;
-        return this.carRent;
+//        this.carRent=this.carRent*days;
+//        return this.carRent;
+
+        int store = this.getCarRent()* days;
+        return store;
+    }
+    public  int book(int days,int hours){
+        int stores=getCarRent()/24;
+        int store = this.getCarRent()* (days+stores);
+        return store;
     }
     public void cancel(){
 
@@ -22,4 +31,5 @@ public class Car extends BaseFunctionality implements CarInterface{
     public void driverIncluded(){
         System.out.println("Driver Included");
     }
+
 }
