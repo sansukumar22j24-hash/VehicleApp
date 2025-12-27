@@ -1,36 +1,22 @@
 package Vehicle;
 
-public class Bike {
+public class Bike extends BaseFunctionality implements BikeInterface {
     private int vehicleNo;
-    private int rent;
-
-    public int getVehicleNo() {
-        return vehicleNo;
+    private int bikeRent=100;
+    public int getBikeRent() {
+        return bikeRent;
     }
-
-    public void setVehicleNo(int vehicleNo) {
-        this.vehicleNo = vehicleNo;
+    public void setBikeRent(int rent) {
+        this.bikeRent = rent;
     }
-
-    public int getRent() {
-        return rent;
+    public int  book(int days){
+        this.bikeRent=this.bikeRent*days;
+       return this.bikeRent;
     }
-
-    public void setRent(int rent) {
-        this.rent = rent;
-    }
-    public  void book(int days){
-        this.rent=this.rent+days;
-        System.out.println(this.rent);
-    }
-    public void cancel(int days){
-        this.rent=this.rent-days;
-        System.out.println(this.rent);
+    public void cancel(){
+        System.out.println("Bike can be return");
     }
     public void helmetIncluded(){
         System.out.println("Helmet Included");
     }
-
-
-
 }

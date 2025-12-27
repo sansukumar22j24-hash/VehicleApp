@@ -1,31 +1,23 @@
 package Vehicle;
 
-public class Car {
-    private int vehicleNo;
-    private int rent;
+public class Car extends BaseFunctionality implements CarInterface{
 
-    public int getVehicleNo() {
-        return vehicleNo;
-    }
-
-    public void setVehicleNo(int vehicleNo) {
-        this.vehicleNo = vehicleNo;
-    }
+    private int carRent=500;
 
     public int getRent() {
-        return rent;
+        return carRent;
     }
 
     public void setRent(int rent) {
-        this.rent = rent;
+        this.carRent = rent;
     }
-    public  void book(int days){
-        this.rent=this.rent+days;
-        System.out.println(this.rent);
+    public  int book(int days){
+        this.carRent=this.carRent*days;
+        return this.carRent;
     }
-    public void cancel(int days){
-        this.rent=this.rent-days;
-        System.out.println(this.rent);
+    public void cancel(){
+
+        System.out.println("Car cannot be return ");
     }
     public void driverIncluded(){
         System.out.println("Driver Included");
